@@ -1,4 +1,4 @@
-Log
-===
+Splot Log
+=====
 
 Log system.

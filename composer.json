@@ -1,0 +1,20 @@
+{
+    "name": "splot/log",
+    "description": "Log system.",
+    "keywords": ["php", "log", "splot"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michał Dudek",
+            "email": "michal@michaldudek.pl"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "splot/foundation": "dev-master",
+        "psr/log": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "Splot\\Log": "src/" }
+    }
+}
