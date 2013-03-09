@@ -14,6 +14,7 @@ use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 
 use Splot\Foundation\Debug\Timer;
+use Splot\Foundation\Utils\StringUtils;
 
 use Splot\Log\ExportableLogInterface;
 
@@ -62,7 +63,7 @@ class Logger implements LoggerInterface, ExportableLogInterface
         $this->_log[] = array(
             'timestamp' => Timer::getMicroTime(),
             'level' => $level,
-            'message' => (string)$message,
+            'message' => StringUtils::parseVariables((string)$message, $context),
             'context' => $context,
             'tags' => $tags,
             'timer' => $timer
