@@ -61,12 +61,13 @@ class Logger implements LoggerInterface, ExportableLogInterface
         }
 
         $this->_log[] = array(
-            'timestamp' => Timer::getMicroTime(),
-            'level' => $level,
             'message' => StringUtils::parseVariables((string)$message, $context),
             'context' => $context,
-            'tags' => $tags,
-            'timer' => $timer
+            '_tags' => $tags,
+            '_timestamp' => Timer::getMicroTime(),
+            '_time' => new \DateTime(),
+            '_level' => $level,
+            '_timer' => $timer
         );
     }
 
@@ -189,6 +190,15 @@ class Logger implements LoggerInterface, ExportableLogInterface
      */
     public function isEnabled() {
         return $this->getEnabled();
+    }
+
+    /**
+     * Returns log.
+     * 
+     * @return array
+     */
+    public function getLog() {
+        return $this->_log;
     }
     
 } 

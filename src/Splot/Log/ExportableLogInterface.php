@@ -13,6 +13,11 @@ namespace Splot\Log;
 interface ExportableLogInterface
 {
 
-    
+    /**
+     * Returns the log as array.
+     * 
+     * @return array
+     */
+    public function getLog();
     
 }
