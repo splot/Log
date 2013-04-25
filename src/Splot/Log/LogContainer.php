@@ -12,7 +12,7 @@
  */
 namespace Splot\Log;
 
-use Splot\Foundation\Exceptions\NotUniqueException;
+use MD\Foundation\Exceptions\NotUniqueException;
 
 use Splot\Log\Logger;
 use Splot\Log\ExportableLogInterface;

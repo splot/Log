@@ -13,8 +13,8 @@ namespace Splot\Log;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 
-use Splot\Foundation\Debug\Timer;
-use Splot\Foundation\Utils\StringUtils;
+use MD\Foundation\Debug\Timer;
+use MD\Foundation\Utils\StringUtils;
 
 use Splot\Log\ExportableLogInterface;
 
