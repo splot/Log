@@ -137,6 +137,20 @@ class LogContainer
     }
 
     /**
+     * Exports all logs to an array format.
+     * 
+     * @return array
+     */
+    public static function exportLogs() {
+        $logs = array();
+        foreach(static::$_logs as $name => $log) {
+            $logs[$name] = ($log instanceof ExportableLogInterface) ? $log->getLog() : 'Non-exportable log.';
+        }
+
+        return $logs;
+    }
+
+    /**
      * Returns names of all registered logs.
      * 
      * @return array
