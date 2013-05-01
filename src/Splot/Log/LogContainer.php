@@ -12,6 +12,9 @@
  */
 namespace Splot\Log;
 
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
+
 use MD\Foundation\Exceptions\NotUniqueException;
 
 use Splot\Log\Logger;
