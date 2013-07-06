@@ -15,7 +15,7 @@ namespace Splot\Log\Provider;
 
 use Psr\Log\LoggerInterface;
 
-interface FactoryInterface
+interface LogProviderInterface
 {
 
     /**
