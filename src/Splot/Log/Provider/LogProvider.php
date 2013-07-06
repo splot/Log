@@ -1,20 +1,24 @@
 <?php
 /**
- * An interface for creating Splot-compatible loggers.
+ * A provider class that creates loggers.
  * 
  * This can be used as a service to easily create loggers.
  * 
  * @package SplotLog
+ * @subpackage Provider
  * @author Michał Dudek <michal@michaldudek.pl>
  * 
  * @copyright Copyright (c) 2013, Michał Dudek
  * @license MIT
  */
-namespace Splot\Log;
+namespace Splot\Log\Provider;
 
 use Psr\Log\LoggerInterface;
 
-interface FactoryInterface
+use Splot\Log\Provider\LogProviderInterface;
+use Splot\Log\LogContainer;
+
+class LogProvider implements LogProviderInterface
 {
 
     /**
@@ -23,6 +27,8 @@ interface FactoryInterface
      * @param string $name [optional] Name of the logger.
      * @return LoggerInterface
      */
-    public function create($name = null);
+    public function provide($name = 'Log') {
+        return LogContainer::create($name);
+    }
 
 }

@@ -1,34 +1,29 @@
 <?php
 /**
- * A factory class that creates loggers.
+ * An interface for creating Splot-compatible loggers.
  * 
  * This can be used as a service to easily create loggers.
  * 
  * @package SplotLog
+ * @subpackage Provider
  * @author Michał Dudek <michal@michaldudek.pl>
  * 
  * @copyright Copyright (c) 2013, Michał Dudek
  * @license MIT
  */
-namespace Splot\Log;
+namespace Splot\Log\Provider;
 
 use Psr\Log\LoggerInterface;
 
-use Splot\Log\FactoryInterface;
-use Splot\Log\LogContainer;
-
-class Factory implements FactoryInterface
+interface FactoryInterface
 {
 
     /**
-     * Creates a logger with the given name.
+     * Provides a logger with the given name.
      * 
      * @param string $name [optional] Name of the logger.
      * @return LoggerInterface
      */
-    public function create($name = null) {
-        $name = $name ?: 'Log';
-        return LogContainer::create($name);
-    }
+    public function provide($name = null);
 
 }
