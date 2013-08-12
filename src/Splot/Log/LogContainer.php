@@ -87,6 +87,13 @@ class LogContainer
         return $logger;
     }
 
+    /**
+     * Removes all registered logs.
+     */
+    public static function clear() {
+        static::$_logs = array();
+    }
+
     /*****************************************************
      * SETTERS AND GETTERS
      *****************************************************/
